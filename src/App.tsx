@@ -1,16 +1,10 @@
 import { Button } from './components/Button'
+import { Home } from './pages/Home';
 
 function App() {
   return (
     <>
-
-    <h1>Iniciando com React </h1>
-    <Button></Button>
-    <Button/>
-    <Button/>
-    <Button/>
-    <Button/>
-
+    <Home/>
     </>
   );
 }
