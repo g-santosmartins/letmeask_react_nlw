@@ -9,17 +9,21 @@ import '../styles/auth.scss'
 import { Button } from '../components/Button'
 import { database } from '../services/firebase'
 import { useAuth } from '../hooks/useAuth'
+import { ErrorNotification } from '../components/notifications/ErrorNotification'
 
 export function NewRoom() {
   const history = useHistory()
   const {user} = useAuth()
   const [newRoom, setNewRoom] = useState('')
 
+  
+
   async function handleCreateRoom(event : FormEvent) {
     event.preventDefault()
 
     if(newRoom.trim() === '') {
       return;
+      ErrorNotification('Algo errado! Insira o nome da sala')
     }
 
     const roomRef = database.ref('rooms')
@@ -30,7 +34,10 @@ export function NewRoom() {
     })
 
     history.push(`/rooms/${firebaseRoom.key}`)
+
+    
   }
+
 
 
   return (
@@ -55,7 +62,7 @@ export function NewRoom() {
               Criar sala
             </Button>
           </form>
-          <div>
+          <div className="end-text">
             Quer entrar em uma sala existente? <Link to="/">Clique aqui</Link>
           </div>
         </div>

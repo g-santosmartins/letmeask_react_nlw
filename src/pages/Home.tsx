@@ -11,6 +11,11 @@ import { useAuth } from '../hooks/useAuth'
 import { FormEvent, useState } from 'react'
 import { database } from '../services/firebase'
 
+import { Toaster } from 'react-hot-toast'
+import { ErrorNotification } from '../components/notifications/ErrorNotification'
+import { SuccessNotification } from '../components/notifications/SuccessNotification'
+
+
 export function Home() {
 
   // call as hooks, ex. useHistory
@@ -28,6 +33,13 @@ export function Home() {
 
     history.push('/rooms/new')
 
+    
+
+  }
+
+  async function handleRedirect() {
+    await SuccessNotification("Bem-vindo devolta, aspira!")
+    history.push(`/rooms/${roomCode}`)
   }
 
   async function handleJoinRoom(event: FormEvent) {
@@ -40,15 +52,16 @@ export function Home() {
     const roomRef = await database.ref(`rooms/${roomCode}`).get()
 
     if(!roomRef.exists()) {
-      alert("Room does not exists! :T")
+      ErrorNotification("Hum...Esta sala não existe! Tente outro ID.")
       return;
     }
+    handleRedirect()
 
-    history.push(`/rooms/${roomCode}`)
   }
 
   return (
     <div id="page-auth">
+      <Toaster/>  
       <aside>
         <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
         <strong>Crie Salas de Q&amp;A ao vivo</strong>
