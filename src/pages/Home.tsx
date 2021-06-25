@@ -43,16 +43,25 @@ export function Home() {
     event.preventDefault()
 
     if(roomCode.trim() === '') {
-      return;
+      return
     }
 
     const roomRef = await database.ref(`rooms/${roomCode}`).get()
 
     if(!roomRef.exists()) {
       ErrorNotification("Hum...Esta sala não existe! Tente outro ID.")
-      return;
+      return
+    }
+
+    if(roomRef.val().endedAt){
+
+      // we can control the flow here, but if 
+      // someone uses URL inject params, they can access
+      ErrorNotification(`Que pena! A sala foi encerrada!`)
+      return
     }
     handleRedirect()
+
 
   }
 

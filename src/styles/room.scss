@@ -16,7 +16,9 @@
 
       > div {
         display: flex;
-        gap: 16px;
+
+        // new feature: space between flex display
+        gap: 16px; 
 
         button {
           height: 40px;
