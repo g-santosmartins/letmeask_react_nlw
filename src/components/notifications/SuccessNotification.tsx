@@ -1,4 +1,4 @@
-import { toast, Toaster } from 'react-hot-toast';
+import { toast, Toaster } from 'react-hot-toast'
 
 export const SuccessNotification = (textMessage: string) => toast.success(textMessage, {
   style: {

@@ -32,9 +32,6 @@ export function Home() {
     }
 
     history.push('/rooms/new')
-
-    
-
   }
 
   async function handleRedirect() {

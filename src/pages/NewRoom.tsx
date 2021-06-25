@@ -10,6 +10,7 @@ import { Button } from '../components/Button'
 import { database } from '../services/firebase'
 import { useAuth } from '../hooks/useAuth'
 import { ErrorNotification } from '../components/notifications/ErrorNotification'
+import { Toaster } from 'react-hot-toast'
 
 export function NewRoom() {
   const history = useHistory()
@@ -22,8 +23,8 @@ export function NewRoom() {
     event.preventDefault()
 
     if(newRoom.trim() === '') {
-      return;
       ErrorNotification('Algo errado! Insira o nome da sala')
+      return;
     }
 
     const roomRef = database.ref('rooms')
@@ -42,6 +43,7 @@ export function NewRoom() {
 
   return (
     <div id="page-auth">
+      <Toaster/>
       <aside>
         <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
         <strong>Crie Salas de Q&amp;A ao vivo</strong>
