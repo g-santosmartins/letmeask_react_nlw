@@ -9,6 +9,11 @@
 
 <br>
 
+## 🧪 New features
+
+Some toast modals were implemented for better user experience
+
+
 ## 🧪 Technologies
 
 This project was developed using the following technologies:
