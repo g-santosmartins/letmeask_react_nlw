@@ -13,6 +13,11 @@
 
 Some toast modals were implemented for better user experience
 
+<h1 align="center">
+    <img alt="new toast feature" title="Letmeask" src=".github/toast_feature.gif" />
+</h1>
+
+
 
 ## 🧪 Technologies
 
@@ -26,8 +31,19 @@ This project was developed using the following technologies:
 
 Clone the project and access the folder.
 
+The public URL can be found here: 
+
+*Deployed version:* https://letmeaskreactnlw.web.app/
+
+
+Local React.js development server:
+
 ```bash
 $ git clone https://github.com/g-santosmartins/letmeask_react_nlw.git
+
+```
+
+```bash
 $ cd letmeask
 ```
 
@@ -46,6 +62,7 @@ Use NVM, if you will
 $ yarn start
 
 $npm install
+
 ```
 The app will be available for access on your browser at http://localhost:3000
 
@@ -64,4 +81,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) fi
 
 ---
 
-<p align="center">Made with 💜 by Guilherme Martins</p>
+<p align="center">Made with ❤️ by Guilherme Martins</p>
